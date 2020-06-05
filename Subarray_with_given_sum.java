@@ -20,22 +20,30 @@ class GFG {
 		}
 	}
 	
-	public static void subarr(int n,int sum,int[]arr){
+	public static int subarr(int n,int sum,int[]arr){
 	    
 	    for(int i = 0;i<n;i++){
-	        int temp = i;
+	        int temp = arr[i];
+	        if(temp==sum){
+	            int p = i+1;
+	            System.out.println(p+" "+p);
+	            return 0;
+	        }else{
+	            
+	        
 	        for(int j = i+1;j<n;j++){
-	            temp = temp + j;
+	            temp = temp + arr[j];
 	            if(temp==sum){
 	                int pos1 = i+1;
 	                int pos2 = j+1;
 	                System.out.println(pos1+" "+pos2);
-	                break;
+	                return 0;
 	            }
 	        }
+	        }
 	    }
-	    
-	    
+	    System.out.println(-1);
+	    return 0;
 	    
 	    
 	    
