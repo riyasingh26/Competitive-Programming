@@ -1,5 +1,7 @@
 /*package whatever //do not write package name here */
 
+/*package whatever //do not write package name here */
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -22,11 +24,11 @@ class GFG {
 	}
 	
 	public static int triplet(int n, int []arr) {
-		
-// 		for(int i = 0;i<n;i++) {
-// 			arr[i] = arr[i] * arr[i];
-// 		}
-		
+//		
+//		for(int i = 0;i<n;i++) {
+//			arr[i] = arr[i] * arr[i];
+//		}
+//		
 		// sorting the array
 		
 		for(int i = 0;i<n-1;i++) {
@@ -40,24 +42,28 @@ class GFG {
 		}
 		
 		int count = 0;
-		for(int i = n-1;i>=2;i--) {
+		for(int i = n-1;i>1;i--) {
 			int l = 0;
 			int r = i-1;
 			
 			while(l<r) {
 				if(arr[l]+arr[r]==arr[i]){
-			        count++;
-				}else if(arr[l]+arr[r]<arr[i]) {
-					l++;
-				}else{
-					r--;
+			        count=count+1;
+			        l=l+1;
+			        r=r-1;
+				}else if((arr[l]+arr[r])<arr[i]) {
+					l=l+1;
+				}else {
+					r=r-1;
 			    }
-		    }
+			}
 		}
-		   if(count==0) {
-			   return -1;
-		   }else {
+		
+		
+		   if(count!= 0) {
 			   return count;
+		   }else {
+			   return -1;
 		   }
            		
 	}
